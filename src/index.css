@@ -1,0 +1,102 @@
+ @import "tailwindcss";
+
+/* Animated login background */
+.login-bg {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    -45deg,
+    #0f172a,
+    #172554,
+    #312e81,
+    #1e3a8a
+  );
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* Gradient animation */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Glass login card */
+.login-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: cardAppear 0.8s ease-out;
+}
+
+/* Card entrance */
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Floating circles */
+.floating-circle {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(2px);
+  opacity: 0.5;
+  animation: floatMove 7s ease-in-out infinite;
+}
+
+.circle-one {
+  width: 180px;
+  height: 180px;
+  background: #60a5fa;
+  top: 10%;
+  left: 10%;
+}
+
+.circle-two {
+  width: 130px;
+  height: 130px;
+  background: #a78bfa;
+  bottom: 10%;
+  right: 12%;
+  animation-delay: 2s;
+}
+
+.circle-three {
+  width: 90px;
+  height: 90px;
+  background: #38bdf8;
+  bottom: 20%;
+  left: 18%;
+  animation-delay: 4s;
+}
+
+@keyframes floatMove {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-35px);
+  }
+}
+
+ body {
+  margin: 0;
+  font-family:Arial, Helvetica, sans-serif;
+  background-color: #f8fafc;
+ }
